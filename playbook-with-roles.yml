@@ -1,0 +1,19 @@
+---
+- name: Install and configure Apache
+  hosts: local
+  become: true
+  roles:
+    - role: Apache.role
+
+- name: Install and configure Redis
+  hosts: local
+  become: true
+  roles:
+    - role: Redis.role
+  
+- name: Install and configure PostgreeSQL
+  hosts: local
+  become: true
+  gather_facts: false
+  roles:
+    - role: PostgreeSQL.role
